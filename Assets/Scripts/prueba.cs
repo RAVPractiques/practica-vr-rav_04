@@ -5,30 +5,14 @@ using UnityEngine;
 public class prueba : MonoBehaviour
 {
     public Transform puntoDeRotacion;
-    private bool abierto = false;
+    public bool abierto = false;
 
     private void Start()
     {
         
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (!abierto)
-        {
-            StartCoroutine(AbrirPuerta());
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (abierto)
-        {
-            StartCoroutine(CerrarPuerta());
-        }
-    }
-
-    private IEnumerator AbrirPuerta()
+    public IEnumerator AbrirPuerta()
     {
         Vector3 puntoRotacion = puntoDeRotacion.position;
 
@@ -41,7 +25,7 @@ public class prueba : MonoBehaviour
         abierto = true;
     }
 
-    private IEnumerator CerrarPuerta()
+    public IEnumerator CerrarPuerta()
     {
         Vector3 puntoRotacion = puntoDeRotacion.position;
 
