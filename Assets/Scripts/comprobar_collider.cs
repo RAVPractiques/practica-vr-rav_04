@@ -16,7 +16,6 @@ public class prueba : MonoBehaviour
             transform.RotateAround(puntoRotacion, Vector3.up, 20* Time.deltaTime);
             yield return null;
         }
-        Debug.Log("abierto a true");
         abierto = true;
     }
 
@@ -30,7 +29,6 @@ public class prueba : MonoBehaviour
             transform.RotateAround(puntoRotacion, Vector3.up, -20* Time.deltaTime);
             yield return null;
         }
-        Debug.Log("abierto a false");
         abierto = false;
 
 
