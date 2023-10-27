@@ -13,7 +13,6 @@ public class a : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(prueba.abierto);
         if (!prueba.abierto)
         {
             StartCoroutine(prueba.AbrirPuerta());
@@ -22,7 +21,6 @@ public class a : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log(prueba.abierto);
         if (prueba.abierto)
         {
             StartCoroutine(prueba.CerrarPuerta());
