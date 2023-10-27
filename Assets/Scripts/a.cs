@@ -11,23 +11,28 @@ public class a : MonoBehaviour
         
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(prueba.abierto);
+        if (!prueba.abierto)
+        {
+            StartCoroutine(prueba.AbrirPuerta());
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        Debug.Log(prueba.abierto);
+        if (prueba.abierto)
+        {
+            StartCoroutine(prueba.CerrarPuerta());
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        void OnTriggerEnter(Collider other)
-        {
-            if (!prueba.abierto)
-            {
-                StartCoroutine(prueba.AbrirPuerta());
-            }
-        }
 
-        void OnTriggerExit(Collider other)
-        {
-            if (prueba.abierto)
-            {
-                StartCoroutine(prueba.CerrarPuerta());
-            }
-        }
     }
 }

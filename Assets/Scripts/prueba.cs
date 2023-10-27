@@ -7,11 +7,6 @@ public class prueba : MonoBehaviour
     public Transform puntoDeRotacion;
     public bool abierto = false;
 
-    private void Start()
-    {
-        
-    }
-
     public IEnumerator AbrirPuerta()
     {
         Vector3 puntoRotacion = puntoDeRotacion.position;
@@ -19,9 +14,8 @@ public class prueba : MonoBehaviour
         while (transform.rotation.eulerAngles.y < 90)
         {
             transform.RotateAround(puntoRotacion, Vector3.up, 20* Time.deltaTime);
-            yield return new WaitForSeconds(4); 
+            yield return null;
         }
-
         abierto = true;
     }
 
@@ -32,10 +26,12 @@ public class prueba : MonoBehaviour
         while (transform.rotation.eulerAngles.y > 0)
         {
             transform.RotateAround(puntoRotacion, Vector3.up, -20* Time.deltaTime);
-            yield return new WaitForSeconds(4);
+            yield return null;
         }
 
         abierto = false;
+
+
     }
 
 }
