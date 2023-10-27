@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class comprobar_estado_puerta : MonoBehaviour
+public class comprobar_boton : MonoBehaviour
 {
+    // Start is called before the first frame update
     public abrir_cerrar abrir_cerrar;
 
-    void OnCollissionEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
         if (!abrir_cerrar.abierto)
         {
@@ -14,7 +15,7 @@ public class comprobar_estado_puerta : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collider other)
+    void OnCollisionExit(Collision collision)
     {
         if (abrir_cerrar.abierto)
         {
@@ -22,3 +23,4 @@ public class comprobar_estado_puerta : MonoBehaviour
         }
     }
 }
+
