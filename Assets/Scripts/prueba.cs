@@ -13,7 +13,7 @@ public class prueba : MonoBehaviour
 
         while (transform.rotation.eulerAngles.y < 90)
         {
-            transform.RotateAround(puntoRotacion, Vector3.up, 20* Time.deltaTime);
+            transform.RotateAround(puntoRotacion, Vector3.up, 20 * Time.deltaTime);
             yield return null;
         }
         abierto = true;
@@ -26,7 +26,7 @@ public class prueba : MonoBehaviour
         while (transform.rotation.eulerAngles.y >= 0.0f)
         {
             Debug.Log(transform.rotation.eulerAngles.y);
-            transform.RotateAround(puntoRotacion, Vector3.up, -20* Time.deltaTime);
+            transform.RotateAround(puntoRotacion, Vector3.up, -20 * Time.deltaTime);
             yield return null;
         }
         abierto = false;
