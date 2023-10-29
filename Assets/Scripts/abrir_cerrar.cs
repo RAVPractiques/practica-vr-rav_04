@@ -17,13 +17,14 @@ public class abrir_cerrar : MonoBehaviour
             yield return null;
         }
         abierto = true;
+        
     }
 
     public IEnumerator CerrarPuerta()
     {
         Vector3 puntoRotacion = puntoDeRotacion.position;
-
-        while (transform.rotation.eulerAngles.y >= 0.1f)
+        yield return new WaitForSeconds(2);
+        while (transform.rotation.eulerAngles.y >= 0.3f)
         {
             Debug.Log(transform.rotation.eulerAngles.y);
             transform.RotateAround(puntoRotacion, Vector3.up, -20 * Time.deltaTime);

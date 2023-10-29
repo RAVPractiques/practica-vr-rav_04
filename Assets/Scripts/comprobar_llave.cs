@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class comprobar_estado_puerta : MonoBehaviour
+public class comprobar_llave : MonoBehaviour
 {
     public abrir_cerrar abrir_cerrar;
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (!abrir_cerrar.abierto)
+        if (!abrir_cerrar.abierto && collision.gameObject.CompareTag("llave"))
         {
             StartCoroutine(abrir_cerrar.AbrirPuerta());
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision collision)
     {
         if (abrir_cerrar.abierto)
         {
             StartCoroutine(abrir_cerrar.CerrarPuerta());
         }
     }
+
 }
